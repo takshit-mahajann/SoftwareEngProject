@@ -1,3 +1,4 @@
+\documentclass{article}
 % PharmaFlowAI SRS -- standalone Overleaf-ready source.
 % Upload this file to Overleaf, set it as the main document and use pdfLaTeX.
 % No external images, bibliography database or shell escape are required.
@@ -34,9 +35,9 @@ Ridhmann & 1024240059
 \newcommand{\Institution}{Thapar Institute of Engineering and Technology}
 \newcommand{\Department}{AIML}
 % Imported supervisor text: Anushka maam. Editable placeholder requested for this revision.
-\newcommand{\Supervisor}{[Supervisor name and designation]}
+\newcommand{\Supervisor}{Anushka Chaudhary}
 \newcommand{\Course}{UCS503 --- Software Engineering}
-\newcommand{\SubmissionDate}{[Submission date]}
+\newcommand{\SubmissionDate}{14 October 2026}
 \newcommand{\BaselineDate}{12 October 2026}
 \newcommand{\Source}[1]{{\small\urlstyle{tt}\nolinkurl{#1}}}
 \newcommand{\Implemented}{\textbf{Implemented}}
@@ -135,8 +136,6 @@ Ridhmann & 1024240059
 \SubmissionDate
 \end{flushright}
 \vfill
-{\small Implementation baseline reviewed: \BaselineDate.\\
-Supervisor and submission-date fields remain editable pending confirmation.}
 \end{titlepage}
 \setcounter{page}{2}
 \section*{Document Control}
@@ -152,7 +151,7 @@ Purpose & Academic assessment, maintenance and verifiable scope definition\\
 Implementation status & Implemented, Prototype, Proposed and To verify are kept distinct; test results are bounded evidence.\\
 Technology baseline & Python 3.13.9, Django 6.1; SQLite default, PostgreSQL configurable; Django templates and JavaScript; browser-dependent speech.\\
 Academic details & \Department; \Institution; \Course\\
-Pending metadata & \Supervisor; \SubmissionDate\\
+Submission metadata & \Supervisor; \SubmissionDate\\
 \bottomrule\end{tabularx}\end{table}
 \begin{table}[H]
 \centering\small
@@ -259,26 +258,6 @@ LLM & Large language model; no external LLM is used by this baseline.\\
 API / HTTP & Application programming interface / Hypertext Transfer Protocol.\\
 \end{longtable}
 
-\subsection{References}\label{sec:references}
-\begin{description}[style=nextline,leftmargin=12mm]
-\item[R01] IEEE Std 830-1998, \emph{IEEE Recommended Practice for Software Requirements Specifications}. Historical structural reference, not a certification claim. \url{https://ieeexplore.ieee.org/document/720574}.
-\item[R02] Django Software Foundation, \emph{Django documentation}. Consult documentation matching the recorded project version; this link does not change the baseline. \url{https://docs.djangoproject.com/}.
-\item[R03] Python Software Foundation, \emph{Python 3.13 documentation}. \url{https://docs.python.org/3.13/}.
-\item[R04] Supplied \emph{SAMS SRS v2.0}, used only for diagram appearance and structural ideas in this revision. None of its domain content is adopted.
-\end{description}
-Source identifiers below refer to the project working-tree files reviewed for this document. They identify evidence, not third-party product guarantees. File paths are relative to the project root; the supplied template is an external reference. The reference's project-specific statements are not authoritative for \Project.
-\begin{description}[style=nextline,leftmargin=12mm]
-\item[S01] \textbf{Reference SRS.} Supplied file \texttt{ryktphvctsxg.pdf}, ``Software Requirements Specification for IICT Website'', version 1.0, dated 24 August 2019, 11 pages. Used for chapter hierarchy and presentation only.
-\item[S02] \textbf{Configuration and dependency baseline.} \Source{requirements.txt}; \Source{config/settings.py}; \Source{config/urls.py}; \Source{config/wsgi.py}; \Source{config/asgi.py}; \Source{manage.py}; \Source{.env.example}; \Source{.claude/launch.json}.
-\item[S03] \textbf{Accounts.} \Source{apps/accounts/models.py}; \Source{apps/accounts/backends.py}; \Source{apps/accounts/forms.py}; \Source{apps/accounts/views.py}; \Source{apps/accounts/urls.py}; \Source{apps/accounts/admin.py}; initial account migration.
-\item[S04] \textbf{Medicine domain.} \Source{apps/medicines/models.py}; \Source{apps/medicines/forms.py}; \Source{apps/medicines/views.py}; \Source{apps/medicines/urls.py}; \Source{apps/medicines/admin.py}; initial medicine migration.
-\item[S05] \textbf{Dashboard and prototypes.} \Source{apps/core/views.py}; \Source{apps/core/urls.py}; \Source{templates/core/dashboard.html}; \Source{templates/core/module.html}; \Source{static/js/app.js}.
-\item[S06] \textbf{Catalogue report.} \Source{apps/core/catalogue_report.py}; report view in \Source{apps/core/views.py}; \Source{templates/core/catalogue_report.html}; \Source{static/css/catalogue_report.css}; \Source{static/js/catalogue_report.js}.
-\item[S07] \textbf{Assistant service and interface.} \Source{apps/core/assistant.py}; chat view in \Source{apps/core/views.py}; \Source{static/js/assistant.js}; \Source{templates/partials/_assistant.html}; \Source{docs/customer-assistant.md}.
-\item[S08] \textbf{Shared presentation.} \Source{templates/base.html}; \Source{templates/base_app.html}; \Source{templates/partials/_sidebar.html}; account and medicine templates; \Source{static/css/tokens.css}; \Source{static/css/base.css}; \Source{static/css/app.css}; \Source{static/css/assistant.css}.
-\item[S09] \textbf{Django verification sources.} \Source{apps/accounts/tests/test_login.py}; \Source{apps/medicines/tests/test_models.py}; \Source{apps/medicines/tests/test_views.py}; \Source{apps/core/tests.py}.
-\item[S10] \textbf{Frontend verification source.} \Source{tests/assistant.test.cjs}. Speech event tests use simulation, not live microphone capture.
-\end{description}
 
 
 \clearpage
@@ -991,7 +970,7 @@ NFR-PRI-01 & The application shall not deliberately persist voice audio or chat 
 \item Speech requires a compatible browser, user permission and a suitable environment. Network availability may be required by the browser's provider; text assistance must remain usable without voice.
 \item SQLite is the local default. Production database selection, hosting, monitoring and backup arrangements remain decisions to be documented.
 \item The supplied reference determines section organization and visual style, not this project's features. Neither reference supplies project features or implementation technologies for \Project.
-\item Author names and roll numbers, department, institution and course details were supplied for this revision. Supervisor and submission date remain editable placeholders as requested for this revision; the imported supervisor value is retained only in a source comment.
+\item Author names and roll numbers, department, institution, course, supervisor and submission date are recorded in the title-page metadata.
 \end{itemize}
 
 \subsection{Maintenance and Proposed Enhancements}
@@ -1113,7 +1092,7 @@ TC-42 & Deployment, permissions and recovery & Agreed deployment checklist, oper
 \textbf{Baseline verification note.} Both suites were re-executed on \BaselineDate: all 85 Django tests and all nine JavaScript tests passed. Django's system check reported no issues. The launcher also emitted a Python-location warning, but the test run completed successfully. Automated test results are bounded evidence and do not establish production readiness.
 
 \subsection{Reference Alignment and Document Control}
-The original five numbered chapters and their existing subsections are retained. Definitions and references are consolidated into Sections 1.4 and 1.5, with pointers preserved in Sections 5.5 and 5.6. New third-level subsections add permissions, constraints, diagrams and acceptance planning without removing existing requirements.
+The original five numbered chapters and their existing subsections are retained. Definitions are consolidated in Section 1.4; the reference list is placed at the end of the document, with pointers preserved in Sections 5.5 and 5.6. New third-level subsections add permissions, constraints, diagrams and acceptance planning without removing existing requirements.
 
 The original S01 reference supplied the chapter hierarchy and academic presentation. The additional R04 reference supplies only visual and structural ideas: pastel diagram palettes, layered architecture, explicit diagram boundaries and document-control information. All actors, data and requirements remain PharmaFlowAI-specific. DFDs represent logical information flows; the class/ER view represents the actual data model. Use-case and state diagrams clarify existing interactions rather than establish new features.
 
@@ -1124,4 +1103,27 @@ The complete source list S01--S10 is retained in Section~\ref{sec:references}. S
 
 \subsection{Terminology}
 The original terminology is merged into the two-column definitions table in Section~\ref{sec:terms}.
+\clearpage
+\section{References}\label{sec:references}
+\begin{description}[style=nextline,leftmargin=12mm]
+\item[R01] IEEE Std 830-1998, \emph{IEEE Recommended Practice for Software Requirements Specifications}. Historical structural reference, not a certification claim. \url{https://ieeexplore.ieee.org/document/720574}.
+\item[R02] Django Software Foundation, \emph{Django documentation}. Consult documentation matching the recorded project version; this link does not change the baseline. \url{https://docs.djangoproject.com/}.
+\item[R03] Python Software Foundation, \emph{Python 3.13 documentation}. \url{https://docs.python.org/3.13/}.
+\item[R04] Supplied \emph{SAMS SRS v2.0}, used only for diagram appearance and structural ideas in this revision. None of its domain content is adopted.
+\end{description}
+Source identifiers below refer to the project working-tree files reviewed for this document. They identify evidence, not third-party product guarantees. File paths are relative to the project root; the supplied template is an external reference. The reference's project-specific statements are not authoritative for \Project.
+\begin{description}[style=nextline,leftmargin=12mm]
+\item[S01] \textbf{Reference SRS.} Supplied file \texttt{ryktphvctsxg.pdf}, ``Software Requirements Specification for IICT Website'', version 1.0, dated 24 August 2019, 11 pages. Used for chapter hierarchy and presentation only.
+\item[S02] \textbf{Configuration and dependency baseline.} \Source{requirements.txt}; \Source{config/settings.py}; \Source{config/urls.py}; \Source{config/wsgi.py}; \Source{config/asgi.py}; \Source{manage.py}; \Source{.env.example}; \Source{.claude/launch.json}.
+\item[S03] \textbf{Accounts.} \Source{apps/accounts/models.py}; \Source{apps/accounts/backends.py}; \Source{apps/accounts/forms.py}; \Source{apps/accounts/views.py}; \Source{apps/accounts/urls.py}; \Source{apps/accounts/admin.py}; initial account migration.
+\item[S04] \textbf{Medicine domain.} \Source{apps/medicines/models.py}; \Source{apps/medicines/forms.py}; \Source{apps/medicines/views.py}; \Source{apps/medicines/urls.py}; \Source{apps/medicines/admin.py}; initial medicine migration.
+\item[S05] \textbf{Dashboard and prototypes.} \Source{apps/core/views.py}; \Source{apps/core/urls.py}; \Source{templates/core/dashboard.html}; \Source{templates/core/module.html}; \Source{static/js/app.js}.
+\item[S06] \textbf{Catalogue report.} \Source{apps/core/catalogue_report.py}; report view in \Source{apps/core/views.py}; \Source{templates/core/catalogue_report.html}; \Source{static/css/catalogue_report.css}; \Source{static/js/catalogue_report.js}.
+\item[S07] \textbf{Assistant service and interface.} \Source{apps/core/assistant.py}; chat view in \Source{apps/core/views.py}; \Source{static/js/assistant.js}; \Source{templates/partials/_assistant.html}; \Source{docs/customer-assistant.md}.
+\item[S08] \textbf{Shared presentation.} \Source{templates/base.html}; \Source{templates/base_app.html}; \Source{templates/partials/_sidebar.html}; account and medicine templates; \Source{static/css/tokens.css}; \Source{static/css/base.css}; \Source{static/css/app.css}; \Source{static/css/assistant.css}.
+\item[S09] \textbf{Django verification sources.} \Source{apps/accounts/tests/test_login.py}; \Source{apps/medicines/tests/test_models.py}; \Source{apps/medicines/tests/test_views.py}; \Source{apps/core/tests.py}.
+\item[S10] \textbf{Frontend verification source.} \Source{tests/assistant.test.cjs}. Speech event tests use simulation, not live microphone capture.
+\end{description}
+
+
 \end{document}
